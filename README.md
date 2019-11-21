@@ -55,4 +55,5 @@ brew install rust
 
 # Run test
 cargo test
+cargo test -- --ignored
 ```
