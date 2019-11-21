@@ -1,1 +1,0 @@
-/Users/hanksudo/Exercism/kotlin/two-fer/src/test/kotlin/TwoferTest.kt
