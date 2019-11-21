@@ -46,3 +46,13 @@ brew install bats
 # Run test
 bats *_test.sh
 ```
+
+## Rust
+
+```bash
+# Installation
+brew install rust
+
+# Run test
+cargo test
+```
