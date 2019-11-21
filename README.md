@@ -1,34 +1,28 @@
+- [exercism](#exercism)
+  - [Python](#python)
+  - [Kotlin](#kotlin)
+
 # exercism
 
 My solutions for exercism.io
 
 ## Python
 
-### Installation
-
 ```bash
+# Installation
 brew install python
 pip install -U pytest
-```
 
-### Run test
-
-```bash
+# Run test
 pytest
 ```
 
 ## Kotlin
 
-### Installation
-
 ```bash
-brew install openjdk
-brew install kotlin
-brew install gradle
-```
+# Installation
+brew install openjdk, kotlin, gradle
 
-### Run test
-
-```bash
+# Run test
 gradle test
 ```
