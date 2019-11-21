@@ -36,3 +36,13 @@ brew install go
 # Run test
 go test -v --bench . --benchmem
 ```
+
+## Bash
+
+```bash
+# Installation
+brew install bats
+
+# Run test
+bats *_test.sh
+```
