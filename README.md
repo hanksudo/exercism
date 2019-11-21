@@ -26,3 +26,13 @@ brew install openjdk, kotlin, gradle
 # Run test
 gradle test
 ```
+
+## Golang
+
+```bash
+# Installation
+brew install go
+
+# Run test
+go test -v --bench . --benchmem
+```
