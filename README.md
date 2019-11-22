@@ -17,7 +17,7 @@ pip install -U pytest
 pytest
 ```
 
-## Kotlin
+## Kotlin, Java
 
 ```bash
 # Installation
