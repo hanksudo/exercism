@@ -27,6 +27,13 @@ brew install openjdk, kotlin, gradle
 gradle test
 ```
 
+## JavaScript
+
+```bash
+npm install
+npm test
+```
+
 ## Golang
 
 ```bash
