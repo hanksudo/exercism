@@ -1,10 +1,6 @@
-- [exercism](#exercism)
-  - [Python](#python)
-  - [Kotlin](#kotlin)
-
 # exercism
 
-My solutions for exercism.io
+My solutions on exercism.io [![Build Status](https://travis-ci.org/hanksudo/exercism.svg?branch=master)](https://travis-ci.org/hanksudo/exercism)
 
 ## Python
 
