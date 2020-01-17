@@ -1,6 +1,9 @@
 package scrabble
 
-import "strings"
+import (
+	"strings"
+	"unicode"
+)
 
 func Score(word string) int {
 	scoreMapping := map[string]int{
@@ -14,9 +17,9 @@ func Score(word string) int {
 	}
 	scores := 0
 
-	for _, c := range strings.ToLower(word) {
+	for _, c := range word {
 		for chars, score := range scoreMapping {
-			index := strings.IndexRune(chars, c)
+			index := strings.IndexRune(chars, unicode.ToLower(c))
 			if index != -1 {
 				scores += score
 				break
