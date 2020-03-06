@@ -60,3 +60,10 @@ brew install rust
 cargo test
 cargo test -- --ignored
 ```
+
+## Ruby
+
+```bash
+gem install minitest
+ruby -r minitest/pride hello_world_test.rb
+```
