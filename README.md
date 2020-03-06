@@ -1,6 +1,6 @@
 # exercism
 
-My solutions on exercism.io [![Build Status](https://travis-ci.org/hanksudo/exercism.svg?branch=master)](https://travis-ci.org/hanksudo/exercism)
+My solutions on [exercism.io](https://exercism.io/) [![Build Status](https://travis-ci.org/hanksudo/exercism.svg?branch=master)](https://travis-ci.org/hanksudo/exercism)
 
 ## Python
 
