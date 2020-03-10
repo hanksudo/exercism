@@ -67,3 +67,13 @@ cargo test -- --ignored
 gem install minitest
 ruby -r minitest/pride hello_world_test.rb
 ```
+
+## Swift
+
+```bash
+# runs tests 
+swift test
+
+# creates an Xcode project
+swift package generate-xcodeproj
+```
