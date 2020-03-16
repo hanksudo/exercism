@@ -2,5 +2,5 @@ require 'minitest/autorun'
 
 task :default => :test
 task :test do
-  Dir.glob('./ruby/*/*_test.rb').each { |file| require file}
+  Dir.glob('./*/*_test.rb').each { |file| require file}
 end
