@@ -21,9 +21,10 @@ matrix:
     script: ./scripts/run-cargo-test.sh
   - language: ruby
     rvm:
+      - 2.5
       - 2.6
     install: gem install minitest
-    script: rake -f ./ruby/rakefile
+    script: cd ruby && rake
 
 notifications:
   slack:
