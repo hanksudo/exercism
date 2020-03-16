@@ -18,7 +18,7 @@ matrix:
       allow_failures:
         - rust: nightly
       fast_finish: true
-    script: ./scripts/run-cargo-test.sh
+    script: ./rust/run-tests.sh
   - language: ruby
     rvm:
       - 2.5
