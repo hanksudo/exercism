@@ -3,13 +3,30 @@ matrix:
   - language: python
     python: 3.8
     before_script:
-      - cd python
       - pip install pytest
     script:
-      - pytest
+      - pytest ./python
   - language: go
     go: 1.13
     script: go test -v ./go/... --cover
+  - language: rust
+    rust:
+      - stable
+      - beta
+      - nightly
+    jobs:
+      allow_failures:
+        - rust: nightly
+      fast_finish: true
+    script:
+      - |
+      for path in "rust/"*
+      do
+        cd $path || exit
+        cargo test -- --ignored
+        cd - || exit
+      done
+
 notifications:
   slack:
     secure: DwciCUZO3UDCpnduMmMewjYhk4bonRwiEnIsPiDG85ILESDyWNTh0zQHXCK6TBwEE3N2q3bKC9g1cXnOsEOcvH+9Ldx3wsrxdtkAgOTbeASS1t/I4n2mDDNjES0RzsLhb202uQ5LHZhgIbhn/6kt6elM9ErrNmevy3e8wACb/Ik6opu4FWHpaLpcsAHCdfVHDO91f89NywhrcqmgeHR9lPXwQmX4o++kuSB5JqkilOv6Ty7DH0IGjeE7DaPdWj419bEoVxjTPYdr1RhTj9k2VCQOFN+C2YZJrd+N7vdZz7TvvWkbabNXK3PcpHOviKLBifOGQcgVA/hZSjEmcly2nVHi2r7g3Hh463XfjeS8uacEt59yJM5NTirzaEN9E1EoHEPHSt+BPX5vXpsq1O1OsnTEB8wf2DEb3YK8lDZ5dU3CDXU0nhkGLYsuZ7+8imhxwbJpZm1XZjFNNWxaan8Xlh8H8loL19YL21pRkv52yz5AmzMfRnFJ2hYqVJw+4ZPO2cI1Hsw5B6Z/JE8TNnjTcNswfEARlDm3fCWcMLyLcFjJ8bAV0qoDu5YMQ8VOkV5CZUgVEGO+hTnByAD1bN7jMZ7Zk1TrTwVelYhlepyne3anjBOjyDTamSfZv1QQANyR8RxuZDcdKmbIImGbiAwWzlqE/WbOj1mxywtChLbGlu0=
