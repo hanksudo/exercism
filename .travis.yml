@@ -18,14 +18,7 @@ matrix:
       allow_failures:
         - rust: nightly
       fast_finish: true
-    script:
-      - |
-      for path in "rust/"*
-      do
-        cd $path || exit
-        cargo test -- --ignored
-        cd - || exit
-      done
+    script: ./scripts/run-cargo-test.sh
 
 notifications:
   slack:
