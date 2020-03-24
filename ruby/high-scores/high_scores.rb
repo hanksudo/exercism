@@ -5,7 +5,7 @@ class HighScores
   end
 
   def latest
-    scores[-1]
+    scores.last
   end
 
   def personal_best
