@@ -1,7 +1,7 @@
 class Matrix
   attr_reader :matrix
   def initialize(matrix)
-    @matrix = matrix.split("\n").map { |row| row.split.map(&:to_i) }
+    @matrix = matrix.each_line.map { |row| row.split.map(&:to_i) }
   end
 
   def rows
