@@ -1,4 +1,3 @@
-//Solution goes in Sources
 struct RnaTranscription {
     enum TranscriptionError: Error {
         case invalidNucleotide(_ message: String)
@@ -16,11 +15,11 @@ struct Nucleotide {
         dna_strand = strand
     }
     func complementOfDNA() throws -> String {
-        return try dna_strand.map {
+        String(try dna_strand.map {
             guard let complement = transcribed[$0] else {
                 throw RnaTranscription.TranscriptionError.invalidNucleotide("\($0) is not a valid Nucleotide")
             }
-            return String(complement)
-        }.joined()
+            return complement
+        })
     }
 }
