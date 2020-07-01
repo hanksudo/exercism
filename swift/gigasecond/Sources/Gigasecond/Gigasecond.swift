@@ -3,7 +3,6 @@ import Foundation
 //Solution goes in Sources
 struct Gigasecond {
     let description: String
-    let one_billion = 1_000_000_000.0
     static let formatter: DateFormatter = {
         let f = DateFormatter()
         f.locale = Locale(identifier: "en_US_POSIX")
@@ -12,12 +11,13 @@ struct Gigasecond {
         return f
     }()
 
-    init?(from: String) {
-        if let date = Gigasecond.formatter.date(from: from) {
-            let hence = Date(timeInterval: one_billion, since: date)
-            description = Gigasecond.formatter.string(from: hence)
-        } else {
-            return nil
-        }
+    init?(from dateString: String) {
+        guard let date = Gigasecond.formatter.date(from: dateString) else { return nil }
+        let hence = Date(timeInterval: .oneBillion, since: date)
+        self.description = Gigasecond.formatter.string(from: hence)
     }
+}
+
+fileprivate extension TimeInterval {
+    static let oneBillion = 1_000_000_000.0
 }
