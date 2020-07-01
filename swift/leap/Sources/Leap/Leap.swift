@@ -1,10 +1,7 @@
 //Solution goes in Sources
 struct Year {
-    var year = 1900
+    let isLeapYear: Bool
     init(calendarYear: Int) {
-        year = calendarYear
-    }
-    var isLeapYear: Bool {
-        return (year % 400 == 0) || (year % 4 == 0 && year % 100 != 0)
+        self.isLeapYear = calendarYear.isMultiple(of: 400) || (calendarYear.isMultiple(of: 4) && !calendarYear.isMultiple(of: 100))
     }
 }
