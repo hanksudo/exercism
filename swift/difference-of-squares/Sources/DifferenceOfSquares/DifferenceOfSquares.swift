@@ -1,14 +1,15 @@
 import Foundation
 
 struct Squares {
-    var squareOfSum: Int
-    var sumOfSquares: Int
-    var differenceOfSquares: Int
+    let squareOfSum: Int
+    let sumOfSquares: Int
+    let differenceOfSquares: Int
     
     init(_ number: Int) {
         let sequence = (1...number)
-        self.squareOfSum = Int(pow(Double(sequence.reduce(0, +)), 2))
-        self.sumOfSquares = sequence.map { $0 * $0 }.reduce(0, +)
+        let sum = Double(sequence.reduce(0, +))
+        self.squareOfSum = Int(pow(sum, 2))
+        self.sumOfSquares = sequence.reduce(0, { $0 + ($1 * $1) })
         self.differenceOfSquares = self.squareOfSum - self.sumOfSquares
     }
 }
