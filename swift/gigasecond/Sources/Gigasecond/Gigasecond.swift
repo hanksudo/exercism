@@ -1,6 +1,5 @@
 import Foundation
 
-//Solution goes in Sources
 struct Gigasecond {
     let description: String
     static let formatter: DateFormatter = {
