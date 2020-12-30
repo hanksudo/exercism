@@ -37,7 +37,7 @@ npm test
 brew install go
 
 # Run test
-go test -v --bench . --benchmem
+go test -v ./go/... --bench --benchmem --cover
 ```
 
 ## Bash
