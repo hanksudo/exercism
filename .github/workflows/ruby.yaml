@@ -1,0 +1,51 @@
+name: Ruby
+
+on: [push]
+
+env:
+  SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        ruby-version: ['2.5', '2.6']
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Ruby ${{ matrix.ruby-version }}
+      uses: actions/setup-ruby@v1
+      with:
+        ruby-version: ${{ matrix.ruby-version }}
+
+    - name: Display Ruby version
+      run: ruby -v
+    
+    - name: Install dependencies
+      run: |
+        gem install minitest
+
+    - name: Test
+      run: |
+        cd ruby && rake
+  
+    - name: Slack Notification on Success
+      if: success()
+      uses: rtCamp/action-slack-notify@v2.1.2
+      env:
+        SLACK_CHANNEL: ci
+        SLACK_USERNAME: Github Actions Bot
+        SLACK_ICON: https://www.pngfind.com/pngs/m/137-1375182_bouncer-github-octodex-github-octocat-hd-png-download.png 
+        SLACK_TITLE: Test Success
+        SLACK_COLOR: good
+
+  
+    - name: Slack Notification on Failure
+      uses: rtCamp/action-slack-notify@v2.1.2
+      if: failure()
+      env:
+        SLACK_CHANNEL: ci
+        SLACK_USERNAME: Github Actions Bot
+        SLACK_ICON: https://www.pngfind.com/pngs/m/137-1375182_bouncer-github-octodex-github-octocat-hd-png-download.png 
+        SLACK_TITLE: Test Failure
+        SLACK_COLOR: danger

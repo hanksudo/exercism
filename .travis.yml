@@ -1,11 +1,5 @@
 matrix:
   include:
-  - language: python
-    python: 3.8
-    before_script:
-      - pip install pytest
-    script:
-      - pytest ./python
   - language: go
     go: 1.13
     script: go test -v ./go/... --cover
@@ -19,12 +13,6 @@ matrix:
         - rust: nightly
       fast_finish: true
     script: ./rust/run-tests.sh
-  - language: ruby
-    rvm:
-      - 2.5
-      - 2.6
-    install: gem install minitest
-    script: cd ruby && rake
 
 notifications:
   slack:
