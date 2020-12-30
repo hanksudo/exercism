@@ -43,6 +43,8 @@ jobs:
       uses: rtCamp/action-slack-notify@v2.1.2
       env:
         SLACK_CHANNEL: ci
+        SLACK_USERNAME: Github Actions Bot
+        SLACK_ICON: https://www.pngfind.com/pngs/m/137-1375182_bouncer-github-octodex-github-octocat-hd-png-download.png 
         SLACK_TITLE: Test Success
         SLACK_COLOR: good
 
@@ -52,5 +54,7 @@ jobs:
       if: failure()
       env:
         SLACK_CHANNEL: ci
+        SLACK_USERNAME: Github Actions Bot
+        SLACK_ICON: https://www.pngfind.com/pngs/m/137-1375182_bouncer-github-octodex-github-octocat-hd-png-download.png 
         SLACK_TITLE: Test Failure
         SLACK_COLOR: danger
