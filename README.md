@@ -1,6 +1,11 @@
 # exercism
 
-My solutions on [exercism.io](https://exercism.io/) [![Build Status](https://travis-ci.org/hanksudo/exercism.svg?branch=master)](https://travis-ci.org/hanksudo/exercism)
+My solutions on [exercism.io](https://exercism.io/)
+
+![example branch parameter](https://github.com/hanksudo/exercism/workflows/Python/badge.svg?branch=master)
+![example branch parameter](https://github.com/hanksudo/exercism/workflows/Golang/badge.svg?branch=master)
+![example branch parameter](https://github.com/hanksudo/exercism/workflows/Rust/badge.svg?branch=master)
+![example branch parameter](https://github.com/hanksudo/exercism/workflows/Ruby/badge.svg?branch=master)
 
 ## Python
 
