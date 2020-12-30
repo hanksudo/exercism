@@ -2,26 +2,56 @@ name: Python
 
 on: [push]
 
-jobs:
-  build:
+env:
+  SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
 
+jobs:
+  test:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [3.5, 3.6, 3.7, 3.8, 3.9]
+        python-version: ['2.x', '3.x']
   
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python ${{ matrix.python-version }}
-      uses: action/setup-python@v2
+      uses: actions/setup-python@v2
       with:
         python-version: ${{ matrix.python-version }}
+        architecture: x64
+
+    - name: Display Python version
+      run: python -c "import sys; print(sys.version)"
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        python -m pip install flake8 pytest
+
     - name: Lint with flake8
       run: |
           # stop the build if there are Python syntax errors or undefined names
           flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
           # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
           flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+
     - name: Test with pytest
       run: |
         pytest
+  
+    - name: Slack Notification on Success
+      if: success()
+      uses: rtCamp/action-slack-notify@v2.1.2
+      env:
+        SLACK_CHANNEL: ci
+        SLACK_TITLE: Test Success
+        SLACK_COLOR: good
+
+  
+    - name: Slack Notification on Failure
+      uses: rtCamp/action-slack-notify@v2.1.2
+      if: failure()
+      env:
+        SLACK_CHANNEL: ci
+        SLACK_TITLE: Test Failure
+        SLACK_COLOR: danger
