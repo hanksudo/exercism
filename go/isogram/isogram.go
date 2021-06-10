@@ -1,21 +1,20 @@
 package isogram
 
-import (
-	"unicode"
-)
+import "unicode"
 
+// IsIsogram - Determine if a word or phrase is an isogram.
 func IsIsogram(word string) bool {
-	runes := []rune{}
+	mapping := map[rune]bool{}
+
 	for _, c := range word {
 		if !unicode.IsLetter(c) {
 			continue
 		}
-		for _, r := range runes {
-			if unicode.ToLower(c) == unicode.ToLower(r) {
-				return false
-			}
+		_, has := mapping[unicode.ToLower(c)]
+		if has {
+			return false
 		}
-		runes = append(runes, c)
+		mapping[unicode.ToLower(c)] = true
 	}
 	return true
 }
