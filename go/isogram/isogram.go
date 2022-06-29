@@ -10,11 +10,11 @@ func IsIsogram(word string) bool {
 		if !unicode.IsLetter(c) {
 			continue
 		}
-		_, has := mapping[unicode.ToLower(c)]
-		if has {
+		c = unicode.ToLower(c)
+		if mapping[c] {
 			return false
 		}
-		mapping[unicode.ToLower(c)] = true
+		mapping[c] = true
 	}
 	return true
 }
