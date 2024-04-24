@@ -3,8 +3,8 @@ name: Rust
 on:
   push:
     paths:
-      - python/**
-      - .github/workflows/python.yaml
+      - rust/**
+      - .github/workflows/rust.yaml
 
 env:
   CARGO_TERM_COLOR: always
