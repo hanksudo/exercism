@@ -8,13 +8,33 @@ on:
 
 env:
   CARGO_TERM_COLOR: always
+  SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
 
 jobs:
-  build:
-
+  test:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
     - name: Run tests
       run: make test-rust
+
+    - name: Slack Notification on Success
+      if: success()
+      uses: rtCamp/action-slack-notify@v2.1.2
+      env:
+        SLACK_CHANNEL: ci
+        SLACK_USERNAME: Github Actions Bot
+        SLACK_ICON: https://www.pngfind.com/pngs/m/137-1375182_bouncer-github-octodex-github-octocat-hd-png-download.png 
+        SLACK_TITLE: Test Success
+        SLACK_COLOR: good
+
+    - name: Slack Notification on Failure
+      uses: rtCamp/action-slack-notify@v2.1.2
+      if: failure()
+      env:
+        SLACK_CHANNEL: ci
+        SLACK_USERNAME: Github Actions Bot
+        SLACK_ICON: https://www.pngfind.com/pngs/m/137-1375182_bouncer-github-octodex-github-octocat-hd-png-download.png 
+        SLACK_TITLE: Test Failure
+        SLACK_COLOR: danger
