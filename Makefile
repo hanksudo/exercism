@@ -1,5 +1,9 @@
 .DEFAULT_GOAL := help
 
+## Testing rust
+test-rust:
+	./rust/run-tests.sh
+
 ## Testing golang
 test-go:
 	cd go && go list -f '{{.Dir}}' -m | xargs go test --bench --benchmem --cover

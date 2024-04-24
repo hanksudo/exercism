@@ -17,4 +17,4 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Run tests
-      run: ./rust/run-tests.sh
+      run: make test-rust
