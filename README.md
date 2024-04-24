@@ -2,10 +2,10 @@
 
 Practice different programming lagnauges on [exercism.io](https://exercism.io/)
 
-![python](https://github.com/hanksudo/exercism/workflows/python.yaml/badge.svg)
-![golang](https://github.com/hanksudo/exercism/workflows/golang.yaml/badge.svg)
+![python](https://github.com/hanksudo/exercism/actions/workflows/python.yaml/badge.svg)
+![golang](https://github.com/hanksudo/exercism/actions/workflows/golang.yaml/badge.svg)
 ![rust](https://github.com/hanksudo/exercism/actions/workflows/rust.yaml/badge.svg)
-![ruby](https://github.com/hanksudo/exercism/workflows/ruby.yaml/badge.svg)
+![ruby](https://github.com/hanksudo/exercism/actions/workflows/ruby.yaml/badge.svg)
 
 ## Python
 
