@@ -1,11 +1,11 @@
 # exercism
 
-My solutions on [exercism.io](https://exercism.io/)
+Practice different programming lagnauges on [exercism.io](https://exercism.io/)
 
-![example branch parameter](https://github.com/hanksudo/exercism/workflows/Python/badge.svg?branch=master)
-![example branch parameter](https://github.com/hanksudo/exercism/workflows/Golang/badge.svg?branch=master)
-![example branch parameter](https://github.com/hanksudo/exercism/workflows/Rust/badge.svg?branch=master)
-![example branch parameter](https://github.com/hanksudo/exercism/workflows/Ruby/badge.svg?branch=master)
+![python](https://github.com/hanksudo/exercism/workflows/python.yaml/badge.svg)
+![golang](https://github.com/hanksudo/exercism/workflows/golang.yaml/badge.svg)
+![rust](https://github.com/hanksudo/exercism/actions/workflows/rust.yaml/badge.svg)
+![ruby](https://github.com/hanksudo/exercism/workflows/ruby.yaml/badge.svg)
 
 ## Python
 
