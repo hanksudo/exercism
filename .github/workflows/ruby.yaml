@@ -30,8 +30,8 @@ jobs:
         gem install minitest
 
     - name: Test
-      run: |
-        cd ruby && rake
+      run: make test-ruby
+        
   
     - name: Slack Notification on Success
       if: success()

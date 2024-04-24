@@ -74,6 +74,9 @@ sh ./rust/run-tests.sh
 ```bash
 gem install minitest
 ruby -r minitest/pride hello_world_test.rb
+
+# Test all
+cd ruby && rake
 ```
 
 ## Swift

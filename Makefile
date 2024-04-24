@@ -1,5 +1,9 @@
 .DEFAULT_GOAL := help
 
+## Testing ruby
+test-ruby:
+	cd ruby && rake
+
 ## Testing rust
 test-rust:
 	./rust/run-tests.sh
