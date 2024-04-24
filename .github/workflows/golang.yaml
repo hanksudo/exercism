@@ -27,7 +27,7 @@ jobs:
     
     - name: Test
       run: |
-        go test -v ./go/... --bench --benchmem --cover
+        cd go && go list -f '{{.Dir}}' -m | xargs go test --bench --benchmem --cover
   
     - name: Slack Notification on Success
       if: success()

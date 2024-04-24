@@ -1,0 +1,15 @@
+go 1.21.6
+
+use (
+	./hamming
+	./hello-world
+	./isogram
+	./lasagna
+	./leap
+	./raindrops
+	./scrabble-score
+	./space-age
+	./triangle
+	./two-fer
+	./weather-forecast
+)

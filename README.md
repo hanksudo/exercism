@@ -42,7 +42,7 @@ npm test
 brew install go
 
 # Run test
-go test -v ./go/... --bench --benchmem --cover
+cd go && go list -f '{{.Dir}}' -m | xargs go test -v ./... --bench --benchmem --cover
 ```
 
 ## Bash
