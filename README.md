@@ -64,6 +64,9 @@ brew install rust
 # Run test
 cargo test
 cargo test -- --ignored
+
+# Test all
+sh ./rust/run-tests.sh
 ```
 
 ## Ruby
