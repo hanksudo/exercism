@@ -20,9 +20,7 @@ class GradeSchoolTest(unittest.TestCase):
         expected = ["Blair", "James", "Paul"]
         self.assertEqual(school.roster(), expected)
 
-    def test_adding_students_to_different_grades_adds_them_to_the_same_sorted_roster(
-        self
-    ):
+    def test_adding_students_to_different_grades_adds_them_to_the_same_sorted_roster(self):
         school = School()
         school.add_student(name="Chelsea", grade=3)
         school.add_student(name="Logan", grade=7)

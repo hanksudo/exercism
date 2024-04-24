@@ -1,8 +1,6 @@
 import json
-import operator
-from json import JSONEncoder
 from dataclasses import dataclass, field
-from typing import Dict
+from json import JSONEncoder
 
 
 def api(handler):
@@ -14,14 +12,15 @@ def api(handler):
         except IndexError:
             payload = None
         return json.dumps(handler(instance, url, payload), cls=UserEncoder)
+
     return decorate
 
 
 @dataclass
 class User:
     name: str
-    owes: Dict = field(default_factory=dict)
-    owed_by: Dict = field(default_factory=dict)
+    owes: dict = field(default_factory=dict)
+    owed_by: dict = field(default_factory=dict)
     balance: float = 0.0
 
     def owe(self, borrower, amount):
@@ -41,6 +40,7 @@ class User:
             debt_obj = [_to, _from][debt > 0]
             debt_obj[to_user.name] = abs(-debt)
 
+
 class UserEncoder(JSONEncoder):
     def default(self, obj: User):
         try:
@@ -48,7 +48,7 @@ class UserEncoder(JSONEncoder):
                 "name": obj.name,
                 "owes": obj.owes,
                 "owed_by": obj.owed_by,
-                "balance": obj.balance
+                "balance": obj.balance,
             }
         except AttributeError:
             return super().default(obj)
@@ -62,16 +62,11 @@ class RestAPI:
 
     @api
     def get(self, url, payload=None):
-        return {
-            "/users": self._get_users
-        }.get(url)(payload)
+        return {"/users": self._get_users}.get(url)(payload)
 
     @api
     def post(self, url, payload=None):
-        return {
-            "/add": self._add_user,
-            "/iou": self._add_iou
-        }.get(url)(payload)
+        return {"/add": self._add_user, "/iou": self._add_iou}.get(url)(payload)
 
     def _add_user(self, payload):
         new_user = User(name=payload["user"])

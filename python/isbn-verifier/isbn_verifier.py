@@ -8,7 +8,7 @@ def is_valid(isbn):
         try:
             sum_of_values += (10 - idx) * int(c)
         except ValueError:
-            if idx == 9 and c == 'X':
+            if idx == 9 and c == "X":
                 sum_of_values += 10
             else:
                 return False

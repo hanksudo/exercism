@@ -1,5 +1,6 @@
 import collections
 
+
 class School:
     def __init__(self):
         self._students = collections.defaultdict(list)

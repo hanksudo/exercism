@@ -2,6 +2,7 @@ import random
 import string
 from datetime import datetime
 
+
 class Robot:
     __name: str
 

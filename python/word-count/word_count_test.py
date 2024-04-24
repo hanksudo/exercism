@@ -22,9 +22,7 @@ class WordCountTest(unittest.TestCase):
         self.assertEqual(count_words("one,two,three"), {"one": 1, "two": 1, "three": 1})
 
     def test_handles_expanded_lists(self):
-        self.assertEqual(
-            count_words("one,\ntwo,\nthree"), {"one": 1, "two": 1, "three": 1}
-        )
+        self.assertEqual(count_words("one,\ntwo,\nthree"), {"one": 1, "two": 1, "three": 1})
 
     def test_ignore_punctuation(self):
         self.assertEqual(
@@ -33,9 +31,7 @@ class WordCountTest(unittest.TestCase):
         )
 
     def test_include_numbers(self):
-        self.assertEqual(
-            count_words("testing, 1, 2 testing"), {"testing": 2, "1": 1, "2": 1}
-        )
+        self.assertEqual(count_words("testing, 1, 2 testing"), {"testing": 2, "1": 1, "2": 1})
 
     def test_normalize_case(self):
         self.assertEqual(count_words("go Go GO Stop stop"), {"go": 3, "stop": 2})
@@ -68,9 +64,7 @@ class WordCountTest(unittest.TestCase):
         )
 
     def test_multiple_spaces_not_detected_as_a_word(self):
-        self.assertEqual(
-            count_words(" multiple   whitespaces"), {"multiple": 1, "whitespaces": 1}
-        )
+        self.assertEqual(count_words(" multiple   whitespaces"), {"multiple": 1, "whitespaces": 1})
 
     def test_alternating_word_separators_not_detected_as_a_word(self):
         self.assertEqual(
@@ -81,9 +75,7 @@ class WordCountTest(unittest.TestCase):
 
     def test_tabs(self):
         self.assertEqual(
-            count_words(
-                "rah rah ah ah ah	roma roma ma	ga ga oh la la	want your bad romance"
-            ),
+            count_words("rah rah ah ah ah	roma roma ma	ga ga oh la la	want your bad romance"),
             {
                 "rah": 2,
                 "ah": 3,

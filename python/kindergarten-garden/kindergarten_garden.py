@@ -13,6 +13,6 @@ class Garden:
         plant_names = dict((_[0], _) for _ in ["Grass", "Clover", "Radishes", "Violets"])
         results = []
         for l in self.diagram.split("\n"):
-            for char in l[pos * 2: pos * 2 + 2]:
+            for char in l[pos * 2 : pos * 2 + 2]:
                 results.append(plant_names.get(char))
         return results

@@ -1,5 +1,9 @@
 .DEFAULT_GOAL := help
 
+## Testing python
+test-python:
+	pytest
+
 ## Testing ruby
 test-ruby:
 	cd ruby && rake

@@ -1,5 +1,6 @@
 import re
 
+
 def count_words(sentence):
     results = {}
     words = re.findall(r"[a-zA-Z0-9]+'?[a-zA-Z0-9]+|[a-zA-Z0-9]", sentence.lower())

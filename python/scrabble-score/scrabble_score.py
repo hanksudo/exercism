@@ -8,7 +8,7 @@ def score(word):
             "fhvwy": 4,
             "k": 5,
             "jx": 8,
-            "qz": 10
+            "qz": 10,
         }.items():
             if character.lower() in chars:
                 scores += score
