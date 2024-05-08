@@ -1,4 +1,4 @@
-use chrono::{DateTime, Duration, Utc};
+use chrono::{DateTime, Utc, Duration};
 
 const ONE_BILLION: i64 = 1_000_000_000;
 
