@@ -3,7 +3,6 @@
 for path in rust/*/
 do
     cd "$path" || exit
-    cargo test
-    cargo test -- --ignored
+    cargo test -- --include-ignored
     cd - || exit
 done
