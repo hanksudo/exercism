@@ -1,8 +1,11 @@
 #!/bin/bash
 
-for path in rust/*/
+DIR=$(dirname "$0")
+
+for path in "$DIR"/*;
 do
-    cd "$path" || exit
-    cargo test -- --include-ignored
-    cd - || exit
+    if [ -d "$path" ]; then
+        cd "$path" || exit
+        cargo test -- --include-ignored
+    fi
 done
